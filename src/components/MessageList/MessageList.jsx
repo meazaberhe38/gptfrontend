@@ -12,7 +12,7 @@ export default function MessageList({
       {conversations?.length === 0 ? (
         <div className={styles.empty}>What are you working on?</div>
       ) : (
-        conversations.map((msg) => (
+        conversations?.map((msg) => (
           <ChatMessage key={msg.id} role={msg.role} content={msg.content} />
         ))
       )}
