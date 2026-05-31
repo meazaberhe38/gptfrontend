@@ -29,7 +29,7 @@ function App() {
     try {
       const response = await axios.get(`${API_BASE_URL}/chat/conversations`);
       if (response.data.success) {
-        setConversations(response.data.data.conversations);
+        setConversations(response.data.data.conversations || []);
       }
     } catch (error) {
       console.error("Error fetching conversations:", error);
